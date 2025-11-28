@@ -6,9 +6,11 @@ export const validateSchema = (schema) => (req, res, next) => {
     if (!result.success) {
 
         // --- DEBUGGING ---
+        /*
         console.log("Validation Failed!");
         console.log("Result object:", result); 
         console.log("Error object:", result.error); 
+        */
         // -----------------
         // result.error contiene el ZodError con los detalles
         return res.status(400).json({
