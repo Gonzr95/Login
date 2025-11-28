@@ -1,16 +1,11 @@
 import { Router } from "express";
 import { 
-  registrarUsuario, 
-  validarLogin, 
-  irADashboard, 
-  irALogin 
-} from "../controllers/administrador.js";
+  register
+} from "../controllers/user.js";
 
 const router = Router();
 
-router.post("/register", registrarUsuario);
-router.post("/", validarLogin);
-router.get("/dashboard", irADashboard);
-router.get("/", irALogin);
+router.post("/users", register);
 
-export default router;
+
+export {router};

@@ -1,4 +1,4 @@
-import { Sequelize, Op, Model, DataTypes } from "sequelize";
+import { Sequelize } from "sequelize";
 import dotenv from "dotenv";
 dotenv.config(); // Cargar variables desde .env
 
@@ -17,6 +17,7 @@ const sequelize = new Sequelize(
 const connectDB = async () => {
   try {
     await sequelize.authenticate();
+    await sequelize.sync();
     console.log("Conexión a MySQL establecida correctamente.");
   } catch (error) {
     console.error("Error al conectar con MySQL:", error);

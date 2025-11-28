@@ -2,11 +2,10 @@ import express from "express";
 import cors from "cors";
 import { connectDB } from "./db/sequelize.js";
 connectDB();
-//import usersRouter from "./routes/users.js";
-
 const app = express();
 app.disable('x-powered-by');
 const port = 3000;
+import { router as usersRouter} from "./routes/users.js";
 
 // ********** Middlewares **********
 app.use(
@@ -18,9 +17,6 @@ app.use(
 );
 app.use(express.json()); //Cada vez que llegue body con json convertilo a un objeto JS
 
-
-// Rutas
-//app.use(usersRouter);
 
 // Ruta principal
 app.get('/', (req, res) => {
@@ -38,6 +34,9 @@ app.get('/', (req, res) => {
   `);
   res.statusCode = 200;
 });
+// Rutas
+app.use(usersRouter);
+
 
 // Servidor
 app.listen(port, () => {
