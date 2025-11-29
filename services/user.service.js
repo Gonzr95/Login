@@ -57,5 +57,6 @@ export async function loginUser({ mail, pass }) {
 
 export async function logoutUser(token) {
     // Simplemente guardamos el token en la lista negra
+    // La BD puede crecer indefinidamente, programar una tarea en la BD para hacer limpiezas
     await BlacklistedToken.create({ token });
 }
