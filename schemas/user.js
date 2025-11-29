@@ -20,3 +20,10 @@ export const registerUserSchema = z.object({
         required_error: "La contraseña es obligatoria"
     }).min(6, { message: "La contraseña debe tener al menos 6 caracteres" })
 });
+
+export const loginUserSchema = z.object({
+    mail: z.string({ required_error: "Email requerido" })
+           .email("Email inválido"),
+    pass: z.string({ required_error: "Contraseña requerida" })
+           .min(1, "Contraseña requerida")
+});
