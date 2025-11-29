@@ -1,6 +1,9 @@
 # Dependencias
 node_modules/
 
+# Certs
+certs/
+
 # Variables de entorno
 .env
 

@@ -1,7 +1,7 @@
 import { DataTypes } from "sequelize";
 import { sequelize } from "../db/sequelize.js";
 
-const User = sequelize.define(
+export const User = sequelize.define(
   "User",
   {
     id: {
@@ -35,22 +35,8 @@ const User = sequelize.define(
     },
   },
   {
-    tableName: "users",   // 👉 nombre exacto en MySQL
+    tableName: "users",   // nombre exacto en MySQL
     timestamps: true,     // createdAt / updatedAt
-    /*
-    hooks: {
-      // Hash automático antes de guardar
-      beforeCreate: async (user) => {
-        const salt = await bcrypt.genSalt(10);
-        user.pass = await bcrypt.hash(user.pass, salt);
-      },
-      beforeUpdate: async (user) => {
-        if (user.changed("pass")) {
-          const salt = await bcrypt.genSalt(10);
-          user.pass = await bcrypt.hash(user.pass, salt);
-        }
-      },
-    },*/
   }
 );
 
