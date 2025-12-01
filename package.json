@@ -17,11 +17,7 @@
     "cors": "^2.8.5",
     "dotenv": "^17.2.3",
     "express": "^5.1.0",
-<<<<<<< HEAD
-    "express-rate-limit": "^8.2.1",
-=======
     "jsonwebtoken": "^9.0.2",
->>>>>>> 38ceb4b2fafedb7bed9b301ff305723c4eb169cf
     "mysql2": "^3.15.3",
     "sequelize": "^6.37.7",
     "zod": "^3.23.8"

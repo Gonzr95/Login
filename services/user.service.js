@@ -37,8 +37,6 @@ export async function loginUser({ mail, pass }) {
     }
 
     // 2. Comparar contraseñas
-    // Asumiendo que usas bcrypt directo o tu utilidad
-    //const isPasswordValid = await bcrypt.compare(pass, user.pass);
     const isPasswordValid = await comparePassword(pass, user.pass)
     if (!isPasswordValid) {
         throw new Error("WRONG_PASSWORD");

@@ -1,0 +1,19 @@
+### SIGN UP valid
+
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+  "user": "",
+  "pass": ""
+}
+
+### SIGN IN valid
+
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+  "user": "gonz.r@hotmail.com",
+  "pass": "Inicio1."
+}
