@@ -25,12 +25,12 @@ export const authenticate = async (req, res, next) => {
     if (isBlacklisted) {
         return res.status(401).json({ message: "Token invalidado. Inicie sesión nuevamente." });
     }
-    // -------------------------------
 
 
     // 3. Verificar el token
     const decoded = verifyToken(token);
 
+    console.log("Decoded token:", decoded);
     if (!decoded) {
         return res.status(403).json({ message: "Token inválido o expirado" });
     }

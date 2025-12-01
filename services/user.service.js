@@ -49,6 +49,9 @@ export async function loginUser({ mail, pass }) {
     // 4. Retornar info del usuario (sin pass) y el token
     const userData = user.toJSON();
     delete userData.pass;
+    delete userData.createdAt;
+    delete userData.updatedAt;
+    delete userData.id;
 
     return { token, user: userData };
 }

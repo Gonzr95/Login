@@ -36,7 +36,7 @@ export async function logout(req, res) {
     try {
         // Necesitamos el token puro. 
         // Como este endpoint estará protegido, sabemos que viene en el header.
-        const authHeader = req.headers.authorization;
+        const authHeader = req.headers.Authorization;
         const token = authHeader.split(' ')[1];
 
         await userService.logoutUser(token);
