@@ -13,13 +13,16 @@ export const validateSchema = (schema) => (req, res, next) => {
         */
         // -----------------
         // result.error contiene el ZodError con los detalles
+        const formattedErrors = result.error.issues.map(issue => ({
+            field: issue.path.join("."),
+            message: issue.message
+        }));
+
         return res.status(400).json({
             message: "Error de validación",
-            errors: result.error.errors.map((e) => ({
-                field: e.path[0],
-                message: e.message
-            }))
+            errors: formattedErrors
         });
+
     }
 
     // 3. Opcional pero recomendado:
